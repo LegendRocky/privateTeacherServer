@@ -18,5 +18,12 @@ node app.js 运行程序
 由于时间有限，就只写了一部分功能，打开路由文件 ./routes/services/user.js我们可以看到    
 app.get('/user/findteacher', this.findTeacher);即是相应的请求，要执行的操作     
 顺着流程我们可以找到~/models/teacher.js这个模型      
-里面我们可以看到db.collection('teachers', function (err, collection){.....})查找teachers这张表，那么，我们就可以向teachers这张表中添加数据     
+里面我们可以看到db.collection('teachers', function (err, collection){.....})查找teachers数据集合（相当于关系数据库中的表），那么，我们就可以向teachers这张表中添加数据     
 settings.js文件中我们还可以看到数据库名是teacherinfo    
+
+终端命令行中 mongo 切换到mongo shell        
+use teacherinfo 切换／创建数据库teacherinfo    
+db.createCollection("teachers", {size: 20, capped: 5, max: 100});创建数据集合(表)    
+for (var i = 1; i <= 30; i++) db.teachers.save({"id" : i, "name" : 'aaa',"date" : "2016-01-12", "cuts" : "12"});插入30条测试数据      
+
+这时候我们就可以启动mongodb数据库，后台服务器，打开privateTeacher客户端应用看到展示效果了    
