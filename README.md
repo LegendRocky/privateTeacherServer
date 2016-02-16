@@ -11,4 +11,12 @@ mongodb --dbpath /node/mongodata 运行mongodb并指定数据存储位置
 ## 源代码下载
 git clone git@github.com:abcdef506819/privateTeacher.git下载到本地  
 npm install 安装依赖文件  
-node app.js 运行程序
+node app.js 运行程序     
+
+由于刚搭建的数据库，里面并没有任何数据，相应的，我们页面展示也没有任何数据    
+那么我们可以在数据库中插入数条数据，以期达到测试的目的    
+由于时间有限，就只写了一部分功能，打开路由文件 ./routes/services/user.js我们可以看到    
+app.get('/user/findteacher', this.findTeacher);即是相应的请求，要执行的操作     
+顺着流程我们可以找到~/models/teacher.js这个模型      
+里面我们可以看到db.collection('teachers', function (err, collection){.....})查找teachers这张表，那么，我们就可以向teachers这张表中添加数据     
+settings.js文件中我们还可以看到数据库名是teacherinfo    
