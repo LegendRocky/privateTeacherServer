@@ -7,5 +7,5 @@ React Native项目，服务器端的构建，入门级学习资源
 以后此服务器也可以托管其他应用的静态页面，或者变动比较频繁的页面之类
 ## 源代码下载
 git clone git@github.com:abcdef506819/privateTeacher.git下载到本地  
-npm install 安装依赖文件
+npm install 安装依赖文件  
 node app.js 运行程序
